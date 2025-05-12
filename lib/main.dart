@@ -131,14 +131,56 @@ class DetailPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('名前：${contact["name"]}'),
-            Text('電話：${contact["number"]}'),
-            Text('住所：${contact["address"]}'),
-            ElevatedButton(
-              onPressed: () {
-                // 実際には電話がかかるようなコードを記述
-              },
-              child: Text("電話をかける"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(width: 30,),
+                  Icon(Icons.account_circle, size: 40,),
+                  Text('名前：${contact["name"]}', style: TextStyle(fontSize: 20)),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(width: 30,),
+                  Icon(Icons.phone, size: 40,),
+                  Text(
+                    '電話：${contact["number"]}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(width: 30,),
+                  Icon(Icons.home, size: 40,),
+                  Text(
+                    '住所：${contact["address"]}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  // 実際には電話がかかるようなコードを記述
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.phone, size: 30,),
+                    Text("電話をかける"),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
